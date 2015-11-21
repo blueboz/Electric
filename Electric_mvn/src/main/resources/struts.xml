@@ -1,0 +1,18 @@
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 配置Struts的默认主题是defaut -->
+	<constant name="struts.ui.theme" value="simple"></constant>
+	<!-- 配置Struts的默认后缀为.do，防止误操作 -->
+	<constant name="struts.action.extension" value="do,,"></constant>
+	
+	<!-- 配置开发模式 -->
+	<constant name="struts.devMode" value="true"></constant>
+	
+	<package name="elec" extends="struts-default" namespace="/system">
+		<action name="elecTextAction_*" class="cn.blueboz.elec.web.action.ElecTextAction" method="{1}">
+			<result name="save">/test.jsp</result>
+		</action>
+	</package>
+</struts>

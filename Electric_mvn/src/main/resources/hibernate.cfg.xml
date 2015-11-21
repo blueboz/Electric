@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- 四大参数 -->
+		<property name="hibernate.connection.url">jdbc:mysql:///electric</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<!-- 个性化配置 -->
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- 设置为update表示更新表结构，不能够生成validate,create,create-drop,update -->
+		<!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<!-- 加载映射文件 -->
+		<mapping resource="cn/blueboz/elec/domain/ElecText.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
